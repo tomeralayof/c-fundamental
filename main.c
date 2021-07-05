@@ -183,6 +183,21 @@ int main()
      int result = sumArr(array,6);
     printf("the result is: %d \n",result);
 
+
+    //3 rows array:
+
+    int big_arr [3] [3] = {
+            {0,1,2},
+            {3,4,5},
+            {7,8,9}
+    };
+
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            printf("array indexex value: [%d][%d] = %d \n",i,j,big_arr[i][j]);
+        }
+    }
+
     return 0;
 }
 
