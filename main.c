@@ -45,8 +45,6 @@ int* multipule_Arr(int arr[],int size){
     return arr;
 }
 
-
-
 int main()
 {
 //    variable descriptions:
@@ -239,7 +237,6 @@ int main()
         printf("and the value: [%d] = %d \n",i,*pointer_array[i]);
     }
 
-
     char my_string[6] = {'h','e','l','l','o','\a'};
     char other_string_pattern [] = "hello";
 
@@ -259,15 +256,17 @@ int main()
     printf("strlen: %d \n", str_1_length);
 
 
-
     int arrToMultipule [3] = {1,2,3};
     int size1212 = 3;
-    int result [3] = {multipule_Arr(arrToMultipule,size1212)};
+   int* reult_1 = multipule_Arr(arrToMultipule,size1212);
 
+   for(int i=0;i<size1212;i++){
+       printf("the result is: [%d] = %d \n",i,reult_1[i]);
+   }
 
-
-
-
+   for(int i=0; i<size1212;i++){
+       printf("the original arr is: [%d]=%d \n",i,arrToMultipule[i]);
+   }
 
     return 0;
 }
