@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 //my first c code ;)
 
 int global_val;
 
 //functions:
-
 //functions that does not return a value:
 void  myFirstCFunction();
 void sum (int a,int b) {
@@ -29,6 +29,23 @@ int sumArr(int arr[],int size){
     }
     return sum;
 }
+
+void double_arr(int arr[], int size){
+    for(int  i=0; i<size;i++){
+        arr[i] *= 2;
+        printf("value multipuled: %d \n", arr[i]);
+    }
+}
+
+
+int* multipule_Arr(int arr[],int size){
+    for(int i=0;i<size;i++){
+        arr[i]*=2;
+    }
+    return arr;
+}
+
+
 
 int main()
 {
@@ -101,9 +118,7 @@ int main()
 
 
     //while loop:
-
     int num = 10;
-//
 //    while (num>0)
 //    {
 //        printf("the value is: %d \n",num);
@@ -121,7 +136,6 @@ int main()
 
 
 //    int x,y;
-//
 //    //first sum
 //    printf("the first number is: %d \n",x);
 //    scanf("%d",&x);
@@ -185,7 +199,6 @@ int main()
 
 
     //3 rows array:
-
     int big_arr [3] [3] = {
             {0,1,2},
             {3,4,5},
@@ -197,6 +210,64 @@ int main()
             printf("array indexex value: [%d][%d] = %d \n",i,j,big_arr[i][j]);
         }
     }
+
+
+    int arr12 [3] = {1,2,3};
+    int size = 3;
+    double_arr(arr12,size);
+
+
+
+    //pointers: pointer is a variable whose value is the address of another variable.
+    int val = 30;
+    int *pointer_val = &val;
+
+
+    printf("address of val = %x \n",&val);
+    printf("the pointer value of val variable is: %x \n",pointer_val);
+
+
+    int arr123 [3] = {1,2,3};
+    int *pointer_array[3];
+
+    for(int i=0;i<3;i++){
+        pointer_array[i] = &arr123[i];
+        printf("the pointers %x \n:",pointer_array[i]);
+    }
+
+    for(int i=0;i<3;i++){
+        printf("and the value: [%d] = %d \n",i,*pointer_array[i]);
+    }
+
+
+    char my_string[6] = {'h','e','l','l','o','\a'};
+    char other_string_pattern [] = "hello";
+
+    printf("the string value is: %s \n",my_string);
+    printf("the string value is: %s \n",other_string_pattern);
+
+    char str1[12] = "tomer";
+    char str2[12] = "alayof";
+    char str3[5];
+
+    strcpy(str3,str1); // copy to parameter 1 the value of parameter 2;
+    strcat(str1,str2); // concat 2 variables which assign into the function;
+    int str_1_length =  strlen(str1); // give us the length of the required string;
+
+    printf("strCopy: %s \n",str3);
+    printf("strcat: %s \n",str1);
+    printf("strlen: %d \n", str_1_length);
+
+
+
+    int arrToMultipule [3] = {1,2,3};
+    int size1212 = 3;
+    int result [3] = {multipule_Arr(arrToMultipule,size1212)};
+
+
+
+
+
 
     return 0;
 }
